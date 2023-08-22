@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculatrice Simple</title>
+</head>
+<body>
+  <h1>Calculatrice Simple</h1>
+  <input type="number" id="nombre1">
+  <select id="operateur">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" id="nombre2">
+  <button onclick="calculer()">Calculer</button>
+  <p id="resultat"></p>
+
+  <script>
+    function calculer() {
+      let nombre1 = parseFloat(document.getElementById("nombre1").value);
+      let operateur = document.getElementById("operateur").value;
+      let nombre2 = parseFloat(document.getElementById("nombre2").value);
+      let resultat;
+
+      switch (operateur) {
+        case "+":
+          resultat = nombre1 + nombre2;
+          break;
+        case "-":
+          resultat = nombre1 - nombre2;
+          break;
+        case "*":
+          resultat = nombre1 * nombre2;
+          break;
+        case "/":
+          resultat = nombre1 / nombre2;
+          break;
+        default:
+          resultat = "Opérateur invalide";
+      }
+
+      document.getElementById("resultat").textContent = "Résultat : " + resultat;
+    }
+  </script>
+</body>
+</html>
